@@ -10,7 +10,13 @@ public class Vehicle {
   private float speed;
 
   public Vehicle() throws NegativePassengerException {
-    this(0,0.0F);
+    //try {
+      this(0,0.0F);
+    //}
+    //catch(NegativePassengerException e) {
+      // my  Car subclass wouldn't compile without this.. so I guess I need it..
+      // if even..
+    //}
   }
 
   public Vehicle(int passengers,float speed) throws NegativePassengerException {
@@ -57,10 +63,10 @@ public class Vehicle {
      theBestRedCarEver.setPassengers(0);
   }
 
-}
-
-class NegativePassengerException extends Exception {
-  public NegativePassengerException(String message) {
-    super(message);
+  class NegativePassengerException extends Exception {
+    public NegativePassengerException(String message) {
+      super(message);
+    }
   }
+
 }
